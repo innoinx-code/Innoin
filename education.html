@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education - Gulab Seva Foundation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ff3366;
+      color: white;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+      z-index: 1000;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,51,102,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(255,51,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,51,102,0); }
+    }
+    .menu {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+    .menu a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .menu a:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="assets/images/GSFlogo.png" alt="Logo" class="h-10">
+        <span class="text-xl font-bold">Gulab Seva Foundation</span>
+      </div>
+      <div class="space-x-6">
+        <a href="index.html" class="hover:text-pink-400">Home</a>
+        <a href="education.html" class="hover:text-pink-400">Education</a>
+        <a href="#" class="hover:text-pink-400">Shelter</a>
+        <a href="#" class="hover:text-pink-400">Food</a>
+        <a href="#" class="hover:text-pink-400">Healthcare</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Education Page Content -->
+  <section class="text-center py-20">
+    <img src="assets/images/edu1.jpeg" alt="Education Support" class="mx-auto w-2/3 rounded-lg shadow-lg mb-6">
+    <h1 class="text-4xl font-bold mb-4">Our Mission: Education for All</h1>
+    <p class="max-w-3xl mx-auto text-gray-300">
+      At Gulab Seva Foundation, we believe that education is the foundation of a better future.  
+      Our mission is to ensure that every child, regardless of their background, has access to quality education, free of cost.  
+      With your support, we are building schools, providing resources, and creating opportunities for the next generation.  
+    </p>
+  </section>
+
+  <!-- Floating Join Button -->
+  <div class="floating-btn" id="mainBtn">Join</div>
+
+  <!-- Hidden Menu -->
+  <div class="menu" id="menu">
+    <a href="https://facebook.com" target="_blank"><img src="https://img.icons8.com/ios-filled/24/1877F2/facebook-new.png"/></a>
+    <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/ios-filled/24/E4405F/instagram-new.png"/></a>
+    <a href="https://wa.me/918888888888" target="_blank"><img src="https://img.icons8.com/ios-filled/24/25D366/whatsapp.png"/></a>
+    <a href="join.html" class="bg-pink-500 text-white text-sm px-3 py-2 rounded-full">Join Now</a>
+  </div>
+
+  <script>
+    const mainBtn = document.getElementById("mainBtn");
+    const menu = document.getElementById("menu");
+    let open = false;
+    mainBtn.addEventListener("click", () => {
+      open = !open;
+      menu.style.display = open ? "flex" : "none";
+    });
+  </script>
+
+</body>
+</html>
